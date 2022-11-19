@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 
 import Profile from './pages/Profile';
+import Chats from './pages/Chats'
 
 import TumderCards from './TumderCard'
 import Navbar from './Navbar'
@@ -27,7 +28,7 @@ export default function App() {
                   {/* A <Routes> looks through its children <Route>s and
                       renders the first one that matches the current URL. */}
                   <Routes>
-                    <Route path="/chats" element={<Users />}/>
+                    <Route path="/chats" element={<Chats/>}/>
                     <Route path="/profile" element={<Profile/>}/>
                     <Route path="/" element={<Home />}/>
                   </Routes>
