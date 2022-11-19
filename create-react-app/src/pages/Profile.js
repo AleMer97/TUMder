@@ -11,7 +11,7 @@ import TextField from '@mui/material/TextField';
 
 import {students} from '../data';
 
-export default function Profile({student}) {
+export default function Profile() {
 
 
   const [name, setName] = React.useState(student.name);
@@ -116,14 +116,16 @@ export default function Profile({student}) {
             control={<Switch color="primary" />}
             label="Mensa matches"
             labelPlacement="start"
-            checked={student.searchesForMensa}
+            checked={checkedMensa}
+            onChange={handleMensa}
           />
           <FormControlLabel
             value="start"
             control={<Switch color="primary" />}
             label="Study matches"
             labelPlacement="start"
-            checked={student.searchesForStudy}
+            checked={checkedStudy}
+            onChange={handleStudy}
           />        
         </FormGroup>
       </Grid>
