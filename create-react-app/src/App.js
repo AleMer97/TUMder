@@ -2,27 +2,70 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import ProTip from './ProTip';
 import TinderCard from 'react-tinder-card'
+import TumderCard from './TumderCard'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
+import Profile from './pages/Profile';
 
 import TumderCards from './TumderCard'
+
+export default function App() {
+  return (
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Routes> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Routes>
+          <Route path="/about" element={<About />}/>
+          <Route path="/users" element={<Users />}/>
+          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/" element={<Home />}/>
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+function About() {
+  return <h2>About</h2>;
+}
+
+function Users() {
+  return <h2>Users</h2>;
+}
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
   );
 }
 
-export default function App() {
+function Home() {
 
   const onSwipe = (direction) => {
     console.log('You swiped: ' + direction)
