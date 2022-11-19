@@ -14,7 +14,7 @@ import {students} from '../data';
 
 export default function Profile() {
 
-  const student = 0;
+  const student = 5;
 
   const [name, setName] = React.useState(students[student].name);
 
@@ -106,8 +106,16 @@ export default function Profile() {
           <FormControlLabel
             value="start"
             control={<Switch color="primary" />}
-            label="Mensa"
+            label="Mensa matches"
             labelPlacement="start"
+            checked={students[student].searchesForMensa}
+          />
+          <FormControlLabel
+            value="start"
+            control={<Switch color="primary" />}
+            label="Study matches"
+            labelPlacement="start"
+            checked={students[student].searchesForStudy}
           />        
         </FormGroup>
       </Grid>

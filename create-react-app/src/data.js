@@ -7,7 +7,8 @@ const student1 = {
     description: "You can calculate with me;) I'm the freshest study budy you could look for.",
     language: 'German, English, French',
     maxGroupSize: 4,
-    searchesFor: 'study group',
+    searchesForMensa: false,
+    searchesForStudy: true,
     image: '/static/tumStudent1.jpg'
 }
 
@@ -20,7 +21,8 @@ const student2 = {
     description: "Feuerzangenbowle and university for life! I'm also student of German philology at LMU.",
     language: 'Bavarian',
     maxGroupSize: 4,
-    searchesFor: 'study group',
+    searchesForMensa: false,
+    searchesForStudy: true,
     image: '/static/tumStudent2.jpg'
 }
 
@@ -32,7 +34,8 @@ const student3 = {
     description: "Motivated for studying:)",
     language: 'German, English, Spanish',
     maxGroupSize: 4,
-    searchesFor: 'study group',
+    searchesForMensa: false,
+    searchesForStudy: true,
     image: '/static/tumStudent3.jpg'
 }
 
@@ -44,8 +47,8 @@ const student4 = {
     description: "G'day mate! Love surfing, vegemite and Tim Tams. Might share those as well as experiences with study buddies;)",
     language: 'German, English',
     maxGroupSize: 4,
-    searchesFor: 'study group',
-    searchesFor: 'mensa',
+    searchesForMensa: true,
+    searchesForStudy: true,
     image: '/static/tumStudent4.jpg'
 }
 
@@ -57,7 +60,8 @@ const student5 = {
     description: "Nothing beats a balanced diet, but 'to vino I say nie no'.",
     language: 'German, English',
     maxGroupSize: 4,
-    searchesFor: 'mensa',
+    searchesForMensa: true,
+    searchesForStudy: false,
     image: '/static/tumStudent5.jpg'
 }
 
@@ -69,8 +73,8 @@ const student6 = {
     description: "Sliding into your dms?😏",
     language: 'German, French, English, Spanish',
     maxGroupSize: 4,
-    searchesFor: 'study group',
-    searchesFor: 'mensa',
+    searchesForMensa: false,
+    searchesForStudy: true,
     image: '/static/tumStudent6.jpg'
 }
 
