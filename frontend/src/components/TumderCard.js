@@ -19,7 +19,7 @@ import EmojiFlagsIcon from "@mui/icons-material/EmojiFlags";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 
-import { students as rawStudents } from "./data";
+import { students as rawStudents } from "../data";
 import MatchModal from "./MatchModal";
 
 export default function TumderCards({ filteredUser }) {

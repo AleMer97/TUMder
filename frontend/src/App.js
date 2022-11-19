@@ -9,13 +9,13 @@ import Chats from "./pages/Chats";
 import NoPage from "./pages/NoPage";
 import Splash from "./pages/Splash";
 
-import TumderCards from "./TumderCard";
-import Navbar from "./Navbar";
-import SingleChat from "./SingleChat";
+import TumderCards from "./components/TumderCard";
+import Navbar from "./components/Navbar";
+import SingleChat from "./components/SingleChat";
 import { students } from "./data";
 
 export default function App() {
-  const [user, setUser] = React.useState(students[5]);
+  const [user, setUser] = React.useState(students[6]);
 
   return (
     <Router>
