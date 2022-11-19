@@ -112,7 +112,7 @@ export const chats = [
   },
   {
     name: "Hans Pfeiffer",
-    display: "Hey, do you have plans for 06.12?🤩",
+    display: "Hey, do you have plans for 06.12, 7.12 or 8.12?🤩",
     image: chatStudents[2].image,
   },
   {
