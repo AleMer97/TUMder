@@ -15,7 +15,7 @@ import SingleChat from "./SingleChat";
 import { students } from "./data";
 
 export default function App() {
-  const [user, setUser] = React.useState(students[5]);
+  const [user, setUser] = React.useState(students[6]);
 
   return (
     <Router>
