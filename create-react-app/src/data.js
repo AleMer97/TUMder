@@ -77,8 +77,16 @@ const student6 = {
     searchesForStudy: true,
     image: '/static/tumStudent6.jpg'
 }
+const group1 = {
+    name: 'Hermann Fresh, Steffi Schmitt',
+    age: [21, 20],
+    degree: 'Mathematics, Nutritional Science',
+    description: 'Your new study group 💪🤓',
+    language: 'German',
+    image: '/statics/tumGroup1.npg'
+}
 
-export const students = [student1, student2, student3, student4, student5, student6]
+export const students = [student1, student2, student3, student4, student5, student6, group1]
 
 const chatStudents = [...students]
 
