@@ -38,7 +38,7 @@ export default function MatchModal({student, setOpen, open}) {
       >
         <Box sx={style} alignItems='center'>
           <Typography id="modal-modal-title" variant="h5" color="white" textAlign='center' mb={2}>
-            It's a Match! 🤓🎉
+            It's a Match! 😄🎉
           </Typography>
 
           <Card>
