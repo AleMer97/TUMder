@@ -8,6 +8,8 @@ import Avatar from "@mui/material/Avatar";
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 
+import { Link } from "react-router-dom";
+
 import { chats } from "../data";
 
 export default function Chats() {
@@ -18,7 +20,7 @@ export default function Chats() {
       </Typography>
       <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         {chats.map((chat) => (
-          <ListItem divider key={chat.display}>
+          <ListItem divider key={chat.display} component={Link} to='/chattest.html' target="_blank" rel="noopener noreferrer">
             <ListItemAvatar>
               <Avatar
                 src={chat.image}
