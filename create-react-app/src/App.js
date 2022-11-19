@@ -15,33 +15,20 @@ import {
 import Profile from './pages/Profile';
 
 import TumderCards from './TumderCard'
+import Navbar from './Navbar'
 
 export default function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
-
         {/* A <Routes> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Routes>
-          <Route path="/about" element={<About />}/>
-          <Route path="/users" element={<Users />}/>
+          <Route path="/chats" element={<Users />}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/" element={<Home />}/>
         </Routes>
+        <Navbar selected="TUMder"/>
       </div>
     </Router>
   );
@@ -66,15 +53,6 @@ function Copyright() {
 }
 
 function Home() {
-
-  const onSwipe = (direction) => {
-    console.log('You swiped: ' + direction)
-  }
-  
-  const onCardLeftScreen = (myIdentifier) => {
-    console.log(myIdentifier + ' left the screen')
-  }
-
   
   return (
     <Container maxWidth="sm">

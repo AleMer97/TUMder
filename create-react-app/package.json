@@ -9,9 +9,10 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@emotion/react": "latest",
-    "@emotion/styled": "latest",
-    "@mui/material": "latest",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.14",
+    "@mui/material": "^5.10.14",
     "@react-spring/web": "^9.5.5",
     "react": "latest",
     "react-dom": "latest",
