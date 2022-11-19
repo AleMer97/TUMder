@@ -18,7 +18,7 @@ import { students } from './data';
 
 export default function App() {
 
-  const [user, setUser] = React.useState(students[4])
+  const [user, setUser] = React.useState(students[5])
 
   return (
     <Router>

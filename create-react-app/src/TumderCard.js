@@ -16,6 +16,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import SchoolIcon from '@mui/icons-material/School';
 import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
 
 import { students as rawStudents } from './data'
 import MatchModal from './MatchModal';
@@ -112,18 +114,32 @@ export default function TumderCards ({filteredUser}) {
                       {student.description}
                     </Typography>
                     <List>
+                      <Grid container direction='row'>
+                      <Grid item xs={7.5} component='div'>
                         <ListItem disablePadding>
-                          <ListItemIcon>
+                          <ListItemIcon sx={{minWidth: 40}}>
                             <SchoolIcon sx={{color: '#0065bd'}} />
                           </ListItemIcon>
                           <ListItemText primary={student.degree} secondary={student.semester} />
                         </ListItem>
                         <ListItem disablePadding>
-                          <ListItemIcon>
+                          <ListItemIcon sx={{minWidth: 40}}>
                             <EmojiFlagsIcon sx={{color: '#0065bd'}} />
                           </ListItemIcon>
                           <ListItemText primary={student.language} />
                         </ListItem>
+                      </Grid>
+                      <Grid item xs={4.5} component='div' >
+                        <Stack spacing={0.5} direction='column'>
+                            {student.searchesForStudy ? 
+                              <Chip label="Study Match 📚" color="success" variant='filled' /> : 
+                              <Chip label="Study Match 📚" color="error" variant='filled' /> }
+                            {student.searchesForMensa ? 
+                              <Chip label="Mensa Match 🍴" color="success" variant='filled' /> : 
+                              <Chip label="Mensa Match 🍴" color="error" variant='filled' /> }
+                          </Stack>
+                          </Grid>
+                          </Grid>
                       </List>
                   </CardContent>
                 </CardActionArea>
