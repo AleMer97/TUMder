@@ -1,3 +1,8 @@
 html, body {
     min-height: 100%;
 }
+ul {
+    padding: 0;
+    margin: 8px;
+    /* list-style-type: none; */
+}
