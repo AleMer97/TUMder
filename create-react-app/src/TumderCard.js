@@ -115,7 +115,7 @@ export default function TumderCards ({filteredUser}) {
                     </Typography>
                     <List>
                       <Grid container direction='row'>
-                      <Grid item xs={7.5} component='div'>
+                      <Grid item xs={7} component='div'>
                         <ListItem disablePadding>
                           <ListItemIcon sx={{minWidth: 40}}>
                             <SchoolIcon sx={{color: '#0065bd'}} />
@@ -129,7 +129,7 @@ export default function TumderCards ({filteredUser}) {
                           <ListItemText primary={student.language} />
                         </ListItem>
                       </Grid>
-                      <Grid item xs={4.5} component='div' >
+                      <Grid item xs={5} component='div' >
                         <Stack spacing={0.5} direction='column'>
                             {student.searchesForStudy ? 
                               <Chip label="Study Match 📚" color="success" variant='filled' /> : 

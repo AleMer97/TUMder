@@ -79,19 +79,14 @@ export default function Profile({student}) {
         />
       </Grid>
 
-      <Grid item mb={3}>
-        <TextField
-          sx={{width: '300px'}}
-          size="small"
-          label="Semester"
-          value={student.semester}
-        />
-      </Grid>
+      
 
       <Grid 
         container 
-        spacing={1} 
+        spacing={1}
+        sx={{width: '300px'}} 
         justifyContent="center" 
+        ml={0}
         mb={3} 
       >
         <Grid 
@@ -99,9 +94,32 @@ export default function Profile({student}) {
           direction='row' 
           justifyContent='space-between'
         >
+          <Grid item mb={3}>
+            <TextField
+              sx={{width: '160px'}}
+              size="small"
+              label="Degree"
+              value={student.degree}
+            />
+          </Grid>
+          <Grid item mb={3}>
+            <TextField
+              sx={{width: '125px'}}
+              size="small"
+              label="Semester"
+              value={student.semester}
+            />
+          </Grid>
+        </Grid>
+        <Grid 
+          container 
+          direction='row' 
+          justifyContent='space-between'
+        >
+          
           <Grid item >
             <TextField
-              sx={{width: '110px', marginLeft: 3}}
+              sx={{width: '120px', marginLeft: 3}}
               size="small"
               label="Age"
               value={student.age}
@@ -109,22 +127,22 @@ export default function Profile({student}) {
           </Grid>
           <Grid item >
             <TextField
-              sx={{width: '110px', marginRight: 3}}
+              sx={{width: '120px', marginRight: 3}}
               size="small"
               label="maxGroupSize"
               value={student.maxGroupSize}
             />
-          </Grid>  
+          </Grid> 
         </Grid>      
       </Grid>
 
       
-      <Grid item  alignItems='flex-start'>
+      <Grid item mt={-2} alignItems='flex-start'>
         <FormGroup>
           <FormControlLabel
             value="start"
             control={<Switch color="primary" />}
-            label="Mensa matches"
+            label="Mensa matches 🍴"
             labelPlacement="start"
             checked={checkedMensa}
             onChange={handleMensa}
@@ -132,7 +150,7 @@ export default function Profile({student}) {
           <FormControlLabel
             value="start"
             control={<Switch color="primary" />}
-            label="Study matches"
+            label="Study matches 📚"
             labelPlacement="start"
             checked={checkedStudy}
             onChange={handleStudy}
