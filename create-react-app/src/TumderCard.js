@@ -9,6 +9,8 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea, Grid } from '@mui/material';
 
 import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import ReplayIcon from '@mui/icons-material/Replay';
 
 
 import { students } from './data'
@@ -82,7 +84,7 @@ export default function TumderCards () {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="400"
+                  height="500"
                   width='100%'
                   image={student.image}
                   alt="student"
@@ -101,7 +103,7 @@ export default function TumderCards () {
         ))}
        
       </Grid>
-      <Grid item className='buttons' sx={{height: 530}} alignItems='center'>
+      <Grid item className='buttons' sx={{height: 630}} alignItems='center'>
         <Typography align='center' variant='h5'>
            All swiped up!      
         </Typography>
@@ -109,18 +111,9 @@ export default function TumderCards () {
 
       <Grid container className='buttons' justifyContent='space-between'>
         <Button color="success" variant="outlined" style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Swipe left</Button>
-        <Button  variant="outlined" style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}>Undo</Button>
+        <IconButton  variant="outlined" style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}><ReplayIcon fontSize="inherit" /></IconButton>
         <Button  color="error" variant="outlined" style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Swipe right</Button>
       </Grid>
-      {lastDirection ? (
-        <h2 key={lastDirection} className='infoText'>
-          You swiped {lastDirection}
-        </h2>
-      ) : (
-        <h2 className='infoText'>
-          Swipe a card or press a button to get Restore Card button visible!
-        </h2>
-      )}
     </Grid>
   )
 }
