@@ -1,24 +1,63 @@
 
 const student1 = {
     name: 'Hermann Fresh',
-    degree: 'Informatik',
+    age: 21,
+    degree: 'Mathematics',
     semester: '3. Bachelor',
-    description: "I'm searching for fresh learning buddies",
-    language: 'German, English',
+    description: "You can calculate with me;) I'm the freshest study budy you could look for.",
+    language: 'German, English, French',
     maxGroupSize: 4,
     searchesFor: 'study group',
     image: '/static/tumStudent1.jpg'
 }
+
 
 const student2 = {
-    name: 'Maik Lonely',
-    degree: 'Informatik',
+    name: 'Hans Pfeiffer',
+    age: 29,
+    degree: 'Business Administration',
     semester: '12. Master',
-    description: "I'm searching for fresh learning buddies for DS",
-    language: 'German, English',
+    description: "Feuerzangenbowle and university for life! I'm also student of German philology at LMU.",
+    language: 'Bavarian',
     maxGroupSize: 4,
     searchesFor: 'study group',
-    image: '/static/tumStudent1.jpg'
+    image: '/static/tumStudent2.jpg'
 }
 
-export const students = [student1, student2]
+const student3 = {
+    name: 'Mandana Jolie',
+    age: 21,
+    degree: 'Biochemistry',
+    semester: '8. Master',
+    description: "Motivated for studying:)",
+    language: 'German, English, Spanish',
+    maxGroupSize: 4,
+    searchesFor: 'study group',
+    image: '/static/tumStudent3.jpg'
+}
+
+const student4 = {
+    name: 'Lisa Müller',
+    age: 18,
+    degree: 'Lehramt',
+    semester: '1. Bachelor',
+    description: "G'day mate! Love surfing, vegemite and Tim Tams. Might share those as well as experiences with study buddies;)",
+    language: 'German, English',
+    maxGroupSize: 4,
+    searchesFor: 'study group, mensa matches',
+    image: '/static/tumStudent4.jpg'
+}
+
+const student5 = {
+    name: 'Steffi Schmitt',
+    age: 20,
+    degree: 'Nutritional Science',
+    semester: '5. Bachelor',
+    description: "Nothing beats a balanced diet, but 'to vino I say nie no'.",
+    language: 'German, English',
+    maxGroupSize: 4,
+    searchesFor: 'mensa matches',
+    image: '/static/tumStudent5.jpg'
+}
+
+export const students = [student1, student2, student3, student4, student5]
