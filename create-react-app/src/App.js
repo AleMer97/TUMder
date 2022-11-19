@@ -11,6 +11,7 @@ import Splash from "./pages/Splash";
 
 import TumderCards from "./TumderCard";
 import Navbar from "./Navbar";
+import SingleChat from "./SingleChat";
 import { students } from "./data";
 
 export default function App() {
@@ -45,6 +46,7 @@ export default function App() {
                       renders the first one that matches the current URL. */}
               <Routes>
                 <Route path="/chats" element={<Chats />} />
+                <Route path="/exampleChat" element={<SingleChat />} />
                 <Route path="/profile" element={<Profile student={user} />} />
                 <Route path="/" element={<Splash/>} />
                 <Route path="/match" element={<Home user={user} />} />
