@@ -102,17 +102,17 @@ const chatStudents = [...students];
 export const chats = [
   {
     name: "TUMler learn group",
-    display: "Hey guys, let's meet at room 08.13....",
+    display: "Hey guys😃, let's meet at room 08.13! ",
     image: chatStudents[0].image,
   },
   {
-    name: "Fresh Herrmann",
-    display: "I need some help with DS",
-    image: chatStudents[1].image,
+    name: "Lisa Müller",
+    display: "Heyyy💁‍♀️ I need some help with math 🤪🤗 you help me with math I give you some vegemite?😏",
+    image: chatStudents[4].image,
   },
   {
-    name: "Maik Lonely",
-    display: "Are you up for a mensa today?",
-    image: chatStudents[2].image,
+    name: "Hermann Fresh",
+    display: "Hey, do you have plans for 06.12?🤩",
+    image: chatStudents[1].image,
   },
 ];
