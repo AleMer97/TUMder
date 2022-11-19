@@ -40,10 +40,8 @@ export default function Profile({student}) {
     <Grid 
       container 
       direction="column" 
-      // sx={{ my: 4 }}
       justifyContent="center"
       alignItems="center"
-      // spacing={3}
     >
       <Grid item mb={3}>
         <Avatar
@@ -116,14 +114,14 @@ export default function Profile({student}) {
             control={<Switch color="primary" />}
             label="Mensa matches"
             labelPlacement="start"
-            checked={student.searchesForMensa}
+            checked={checkedMensa}
           />
           <FormControlLabel
             value="start"
             control={<Switch color="primary" />}
             label="Study matches"
             labelPlacement="start"
-            checked={student.searchesForStudy}
+            checked={checkedStudy}
           />        
         </FormGroup>
       </Grid>
