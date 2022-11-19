@@ -63,7 +63,7 @@ export default function TumderCards () {
     // during latest swipes. Only the last outOfFrame event should be considered valid
   }
 
-  const swipe = async (dir) => {
+  const swipe = async (dir, student) => {
     if (canSwipe && currentIndex < students.length) {
       await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
     }
@@ -80,11 +80,13 @@ export default function TumderCards () {
 
   // Modal logic
   const [modalOpen, setModalOpen] = React.useState(false);
-  const handleOpen = () => setModalOpen(true);
+  const handleOpen = () => {
+    setModalOpen(true)};
+  const [currentStudent, setCurrentStudent] = React.useState(students[0]);
 
   return (
     <>
-    <MatchModal setOpen={setModalOpen} open={modalOpen}/>
+    <MatchModal setOpen={setModalOpen} open={modalOpen} student={currentStudent}/>
     <Grid container direction='column' justifyContent='center'>
       <Grid item className='cardContainer'>
         {students.map((student, index) => (
@@ -92,14 +94,17 @@ export default function TumderCards () {
             ref={childRefs[index]}
             className='swipe'
             key={student.name}
-            onSwipe={(dir) => swiped(dir, student.name, index)}
+            onSwipe={(dir) => { 
+              swiped(dir, student.name, index)
+              setCurrentStudent(student)
+            }}
             onCardLeftScreen={() => outOfFrame(student.name, index)}
           >
             <Card sx={{ maxWidth: 400, position: 'fixed'}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="400"
+                  height="370"
                   width='100%'
                   image={student.image}
                   alt="student"

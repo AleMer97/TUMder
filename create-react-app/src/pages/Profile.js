@@ -28,7 +28,7 @@ export default function Profile() {
     <Grid 
       container 
       direction="column" 
-      sx={{ my: 4 }}
+     
       justifyContent="flex-start"
       alignItems="center"
       spacing={3}
