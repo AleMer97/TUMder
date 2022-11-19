@@ -7,9 +7,7 @@ import ProTip from './ProTip';
 import TinderCard from 'react-tinder-card'
 
 
-import TumderCard from './TumderCard'
-
-import { students } from './data'
+import TumderCards from './TumderCard'
 
 function Copyright() {
   return (
@@ -41,8 +39,8 @@ export default function App() {
         <Typography variant="h4" component="h1" gutterBottom>
           TUMder
         </Typography>
-        {students.map(student => <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']} key={student.name}><TumderCard student={student}/></TinderCard>)}
-        
+        {/* {students.map(student => <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']} key={student.name}><TumderCard student={student}/></TinderCard>)} */}
+        <TumderCards/>
         <ProTip />
         <Copyright />
       </Box>
