@@ -6,11 +6,13 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import { Typography } from "@mui/material";
+import Grid from "@mui/material/Grid";
+
 import { chats } from "../data";
 
 export default function Chats() {
   return (
-    <>
+    <Grid container alignItems='center' direction='column'>
       <Typography sx={{ color: "#3070B3" }} variant="h4">
         Chats
       </Typography>
@@ -27,6 +29,6 @@ export default function Chats() {
           </ListItem>
         ))}
       </List>
-    </>
+    </Grid>
   );
 }

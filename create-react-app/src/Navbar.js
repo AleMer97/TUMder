@@ -21,7 +21,6 @@ function Navbar({ selected, user }) {
     },
     [selected]
   );
-  console.log(user);
 
   return (
     <Paper
