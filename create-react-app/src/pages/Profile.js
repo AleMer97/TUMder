@@ -28,6 +28,16 @@ export default function Profile() {
     setDescription(event.target.value);
   };
 
+  const [checkedMensa, setMensa] = React.useState(students[student].searchesForMensa);
+  const handleMensa = (event) => {
+    setMensa(event.target.checked);
+  };
+
+  const [checkedStudy, setStudy] = React.useState(students[student].searchesForStudy);
+  const handleStudy = (event) => {
+    setStudy(event.target.checked);
+  };
+
   return (
     <Grid 
       container 
@@ -108,14 +118,16 @@ export default function Profile() {
             control={<Switch color="primary" />}
             label="Mensa matches"
             labelPlacement="start"
-            checked={students[student].searchesForMensa}
+            checked={checkedMensa}
+            onChange={handleMensa}
           />
           <FormControlLabel
             value="start"
             control={<Switch color="primary" />}
             label="Study matches"
             labelPlacement="start"
-            checked={students[student].searchesForStudy}
+            checked={checkedStudy}
+            onChange={handleStudy}
           />        
         </FormGroup>
       </Grid>
