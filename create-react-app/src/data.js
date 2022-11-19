@@ -83,7 +83,7 @@ const group1 = {
     degree: 'Mathematics, Nutritional Science',
     description: 'Your new study group 💪🤓',
     language: 'German',
-    image: '/statics/tumGroup1.npg'
+    image: '/static/tumGroup1.jpg'
 }
 
 export const students = [student1, student2, student3, student4, student5, student6, group1]

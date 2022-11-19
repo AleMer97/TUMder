@@ -44,9 +44,6 @@ export default function Profile({student}) {
           sx={{ width: 150, height: 150}}
         />
       </Grid>
-      <Grid item sx={{mt:-4}}>
-        <Button >Edit</Button>
-      </Grid>
       
       <Grid item mb={3}>
           <TextField
@@ -55,6 +52,7 @@ export default function Profile({student}) {
             label="Name"
             maxRows={1}
             value={name}
+            size="small"
             onChange={handleChangeName}
           />
       </Grid>
@@ -76,6 +74,15 @@ export default function Profile({student}) {
         <TextField
           sx={{width: '300px'}}
           size="small"
+          label="Languages"
+          value={student.language}
+        />
+      </Grid>
+
+      <Grid item mb={3}>
+        <TextField
+          sx={{width: '300px'}}
+          size="small"
           label="Semester"
           value={student.semester}
         />
@@ -87,18 +94,22 @@ export default function Profile({student}) {
         justifyContent="center" 
         mb={3} 
       >
-        <Grid container direction='row' >
-          <Grid item ml={4.8}>
+        <Grid 
+          container 
+          direction='row' 
+          justifyContent='space-between'
+        >
+          <Grid item >
             <TextField
-              sx={{width: '110px'}}
+              sx={{width: '110px', marginLeft: 3}}
               size="small"
               label="Age"
               value={student.age}
             />
           </Grid>
-          <Grid item ml={9.8}>
+          <Grid item >
             <TextField
-              sx={{width: '110px'}}
+              sx={{width: '110px', marginRight: 3}}
               size="small"
               label="maxGroupSize"
               value={student.maxGroupSize}
@@ -108,7 +119,7 @@ export default function Profile({student}) {
       </Grid>
 
       
-      <Grid item mb={3} alignItems='flex-start'>
+      <Grid item  alignItems='flex-start'>
         <FormGroup>
           <FormControlLabel
             value="start"
@@ -127,6 +138,10 @@ export default function Profile({student}) {
             onChange={handleStudy}
           />        
         </FormGroup>
+      </Grid>
+
+      <Grid item >
+        <Button sx={{border: 2, borderRadius: 1}}>Edit</Button>
       </Grid>
     </Grid>
   );
