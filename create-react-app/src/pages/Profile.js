@@ -1,15 +1,9 @@
 import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Avatar from '@mui/material/Avatar';
 import { Button, Grid, Switch } from '@mui/material';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import TextField from '@mui/material/TextField';
-
-import {students} from '../data';
 
 export default function Profile({student}) {
 
@@ -115,6 +109,7 @@ export default function Profile({student}) {
             label="Mensa matches"
             labelPlacement="start"
             checked={checkedMensa}
+            onChange={handleMensa}
           />
           <FormControlLabel
             value="start"
@@ -122,6 +117,7 @@ export default function Profile({student}) {
             label="Study matches"
             labelPlacement="start"
             checked={checkedStudy}
+            onChange={handleStudy}
           />        
         </FormGroup>
       </Grid>
