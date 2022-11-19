@@ -50,7 +50,7 @@ function Navbar({ selected, user }) {
           label="TUMder"
           icon={<PersonSearchIcon />}
           component={Link}
-          to="/"
+          to="/match"
         />
         <BottomNavigationAction
           label="Chats"

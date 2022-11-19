@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from "./pages/Profile";
 import Chats from "./pages/Chats";
 import NoPage from "./pages/NoPage";
+import Splash from "./pages/Splash";
 
 import TumderCards from "./TumderCard";
 import Navbar from "./Navbar";
@@ -45,7 +46,8 @@ export default function App() {
               <Routes>
                 <Route path="/chats" element={<Chats />} />
                 <Route path="/profile" element={<Profile student={user} />} />
-                <Route path="/" element={<Home user={user} />} />
+                <Route path="/" element={<Splash/>} />
+                <Route path="/match" element={<Home user={user} />} />
                 <Route path="*" element={<NoPage />} />
               </Routes>
               <Navbar selected="TUMder" user={user} />
