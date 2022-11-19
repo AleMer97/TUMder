@@ -14,6 +14,8 @@ import {
 
 import Profile from './pages/Profile';
 
+import TumderCards from './TumderCard'
+
 export default function App() {
   return (
     <Router>
@@ -53,7 +55,6 @@ function Users() {
   return <h2>Users</h2>;
 }
 
-
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -81,9 +82,9 @@ function Home() {
         <Typography variant="h4" component="h1" gutterBottom>
           TUMder
         </Typography>
-        <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}><TumderCard/></TinderCard>
-        <ProTip />
-        <Copyright />
+        {/* {students.map(student => <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']} key={student.name}><TumderCard student={student}/></TinderCard>)} */}
+        <TumderCards/>
+
       </Box>
     </Container>
   );
