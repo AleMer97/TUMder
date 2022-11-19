@@ -16,7 +16,7 @@
 
 hosts:
   - chat.tumder.de
-  - 178.26.147.8
+ # - 178.26.147.8
 
 loglevel: info
 
@@ -185,7 +185,8 @@ modules:
     access: announce
   mod_avatar: {}
   mod_blocking: {}
-  mod_bosh: {}
+  mod_bosh: 
+    prebind: true
   mod_caps: {}
   mod_carboncopy: {}
   mod_client_state: 
@@ -212,16 +213,23 @@ modules:
     default: always
   mod_mqtt: {}
   mod_muc:
+    hosts: [muc.@HOST@, rooms.@HOST@]
     access:
       - allow
     access_admin:
       - allow: admin
-    access_create: muc_create
+    access_create: all
     access_persistent: muc_create
     access_mam:
       - allow
     default_room_options:
+      anonymous: true
       mam: true
+      logging: true
+      title: "Hackatum 2022"
+      moderated: false
+      allow_subscription: true
+      max_users: 250
   mod_muc_admin: {}
   mod_offline:
     access_max_user_messages: max_user_offline_messages
@@ -266,7 +274,9 @@ modules:
 ### End:
 ### vim: set filetype=yaml tabstop=8
 
-#auth_method: sql
+auth_method: anonymous
+allow_multiple_connections: true
+anonymous_protocol: both
 
 default_db: sql
 sql_type: mysql
