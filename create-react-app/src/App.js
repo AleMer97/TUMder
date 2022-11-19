@@ -6,6 +6,9 @@ import Link from '@mui/material/Link';
 import ProTip from './ProTip';
 import TinderCard from 'react-tinder-card'
 
+
+import TumderCard from './TumderCard'
+
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -34,9 +37,9 @@ export default function App() {
     <Container maxWidth="sm">
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Create React App example
+          TUMder
         </Typography>
-        <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}><Card</TinderCard>
+        <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}><TumderCard/></TinderCard>
         <ProTip />
         <Copyright />
       </Box>
