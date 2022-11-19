@@ -79,3 +79,24 @@ const student6 = {
 }
 
 export const students = [student1, student2, student3, student4, student5, student6]
+
+const chatStudents = [...students]
+
+export const chats = [
+  {
+    name: "TUMler learn group",
+    display: "Hey guys, let's meet at room 08.13....",
+    image: chatStudents[0].image
+  },
+  {
+    name: "Fresh Herrmann",
+    display: "I need some help with DS",
+    image: chatStudents[1].image
+  },
+  {
+    name: "Maik Lonely",
+    display: "Are you up for a mensa today?",
+    image: chatStudents[2].image
+  },
+]
+
