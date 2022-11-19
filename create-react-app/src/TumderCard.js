@@ -148,7 +148,7 @@ export default function TumderCards ({filteredUser}) {
         ))}
        
       </Grid>
-      <Grid item className='buttons' sx={{height: 630}} alignItems='center'>
+      <Grid item sx={{height: '75vh'}} alignItems='center'>
         <Typography align='center' variant='h5'>
            All swiped up!      
         </Typography>
