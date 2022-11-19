@@ -50,6 +50,7 @@ export default function Profile({student}) {
       
       <Grid item mb={3}>
           <TextField
+            sx={{width: '300px'}}
             id="outlined-multiline-flexible"
             label="Name"
             maxRows={1}
@@ -58,8 +59,9 @@ export default function Profile({student}) {
           />
       </Grid>
 
-      <Grid item mb={3}>
+      <Grid item mb={3} >
           <TextField
+            sx={{width: '300px'}}
             id="outlined-multiline-flexible"
             label="Description"
             multiline
@@ -72,6 +74,7 @@ export default function Profile({student}) {
 
       <Grid item mb={3}>
         <TextField
+          sx={{width: '300px'}}
           size="small"
           label="Semester"
           value={student.semester}
@@ -84,24 +87,28 @@ export default function Profile({student}) {
         justifyContent="center" 
         mb={3} 
       >
-        <Grid item>
-          <TextField
-            size="small"
-            label="Age"
-            value={student.age}
-          />
-        </Grid>
-        <Grid item>
-          <TextField
-            size="small"
-            label="maxGroupSize"
-            value={student.maxGroupSize}
-          />
-        </Grid>        
+        <Grid container direction='row' >
+          <Grid item ml={4.8}>
+            <TextField
+              sx={{width: '110px'}}
+              size="small"
+              label="Age"
+              value={student.age}
+            />
+          </Grid>
+          <Grid item ml={9.8}>
+            <TextField
+              sx={{width: '110px'}}
+              size="small"
+              label="maxGroupSize"
+              value={student.maxGroupSize}
+            />
+          </Grid>  
+        </Grid>      
       </Grid>
 
       
-      <Grid item mb={3}>
+      <Grid item mb={3} alignItems='flex-start'>
         <FormGroup>
           <FormControlLabel
             value="start"
