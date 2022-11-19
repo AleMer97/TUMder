@@ -4,10 +4,6 @@ from pydantic import BaseModel
 # https://pydantic-docs.helpmanual.io/usage/types/
 
 class Profile(BaseModel):
-    title: str
-    rating: int
-    author_id: int
-
     name = str
     age = int
     degree = str
@@ -22,8 +18,7 @@ class Profile(BaseModel):
         orm_mode = True
 
 class Matches(BaseModel):
-    name:str
-    age:int
+   
 
     class Config:
         orm_mode = True

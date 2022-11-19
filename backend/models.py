@@ -33,14 +33,14 @@ class Profile(Base):
     time_updated = Column(DateTime(timezone=True), onupdate=func.now())
     # author_id = Column(Integer, ForeignKey('author.id')) BIND MATCHES
 
-    author = relationship('Match')
+    # author = relationship('Match')
 
 
 class Match(Base):
     __tablename__ = 'match'
     id = Column(Integer, primary_key=True)
     # list of ids? https://docs.sqlalchemy.org/en/14/core/type_basics.html#sqlalchemy.types.ARRAY
-    matches = Column(Integer, ARRAY(Integer))
+    # matches = Column(Integer, ARRAY(Integer))
 
     time_created = Column(DateTime(timezone=True), server_default=func.now())
     time_updated = Column(DateTime(timezone=True), onupdate=func.now())
