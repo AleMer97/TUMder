@@ -103,7 +103,12 @@ export default function TumderCards({ filteredUser }) {
               onCardRightScreen={() => outOfFrame(student.name, index)}
               flickOnSwipe
             >
-              <Card sx={{ maxWidth: 400, position: "fixed" }}>
+              <Card
+                sx={{
+                  maxWidth: 400,
+                  position: "fixed",
+                }}
+              >
                 <CardActionArea>
                   <CardMedia
                     component="img"
