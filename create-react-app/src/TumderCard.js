@@ -22,6 +22,7 @@ import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
 
 import { students } from './data'
 import theme from './theme';
+import MatchModal from './MatchModal';
 
 export default function TumderCards () {
   const [currentIndex, setCurrentIndex] = useState(students.length - 1)
@@ -66,6 +67,7 @@ export default function TumderCards () {
     if (canSwipe && currentIndex < students.length) {
       await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
     }
+    handleOpen()
   }
 
   // increase current index and show card
@@ -76,7 +78,13 @@ export default function TumderCards () {
     await childRefs[newIndex].current.restoreCard()
   }
 
+  // Modal logic
+  const [modalOpen, setModalOpen] = React.useState(false);
+  const handleOpen = () => setModalOpen(true);
+
   return (
+    <>
+    <MatchModal setOpen={setModalOpen} open={modalOpen}/>
     <Grid container direction='column' justifyContent='center'>
       <Grid item className='cardContainer'>
         {students.map((student, index) => (
@@ -131,10 +139,18 @@ export default function TumderCards () {
       </Grid>
 
       <Grid container className='buttons' justifyContent='space-between'>
-        <Button color="success" variant="outlined" style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Swipe left</Button>
+        <Button 
+          color="success" 
+          variant="outlined" 
+          style={{ backgroundColor: !canSwipe && '#c3c4d3' }} 
+          onClick={() => swipe('left')}
+        >
+          Swipe left
+        </Button>
         <IconButton  sx={{color: '#0065bd',  backgroundColor: !canGoBack && '#c3c4d3'}} variant="outlined" onClick={() => goBack()}><ReplayIcon fontSize="inherit" /></IconButton>
         <Button  color="error" variant="outlined" style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Swipe right</Button>
       </Grid>
     </Grid>
+    </>
   )
 }
