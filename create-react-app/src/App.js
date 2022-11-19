@@ -41,8 +41,7 @@ export default function App() {
         </Typography>
         {/* {students.map(student => <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']} key={student.name}><TumderCard student={student}/></TinderCard>)} */}
         <TumderCards/>
-        <ProTip />
-        <Copyright />
+
       </Box>
     </Container>
   );

@@ -8,7 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Grid } from '@mui/material';
 
-
+import Button from '@mui/material/Button';
 
 
 import { students } from './data'
@@ -68,7 +68,7 @@ export default function TumderCards () {
   }
 
   return (
-    <Grid container direction='column'>
+    <Grid container direction='column' justifyContent='center'>
       <Grid item className='cardContainer'>
         {students.map((student, index) => (
           <TinderCard
@@ -78,13 +78,14 @@ export default function TumderCards () {
             onSwipe={(dir) => swiped(dir, student.name, index)}
             onCardLeftScreen={() => outOfFrame(student.name, index)}
           >
-            <Card sx={{ maxWidth: 345, position: 'fixed'}}>
+            <Card sx={{ maxWidth: 400, position: 'fixed'}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="140"
+                  height="400"
+                  width='100%'
                   image={student.image}
-                  alt="green iguana"
+                  alt="student"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
@@ -100,16 +101,16 @@ export default function TumderCards () {
         ))}
        
       </Grid>
-      <Grid item className='buttons' sx={{height: 300}} alignItems='center'>
+      <Grid item className='buttons' sx={{height: 530}} alignItems='center'>
         <Typography align='center' variant='h5'>
            All swiped up!      
         </Typography>
       </Grid>
 
-      <Grid item className='buttons'>
-        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Swipe left!</button>
-        <button style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}>Undo swipe!</button>
-        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Swipe right!</button>
+      <Grid container className='buttons' justifyContent='space-between'>
+        <Button color="success" variant="outlined" style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Swipe left</Button>
+        <Button  variant="outlined" style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}>Undo</Button>
+        <Button  color="error" variant="outlined" style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Swipe right</Button>
       </Grid>
       {lastDirection ? (
         <h2 key={lastDirection} className='infoText'>
