@@ -18,12 +18,13 @@ export default function Splash() {
         m={4}
         p={1}
       >
+      Find your
         <ul>
           <li>StudyBuddy</li>
-          <li>MensaMatching</li>
-          <li>Tandems</li>
+          <li>MensaFriend</li>
+          <li>Tandem</li>
         </ul>
-        ...and many more!
+        ...or meet new students!
       </Box>
       <Box 
         justifyContent="center" 
