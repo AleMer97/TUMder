@@ -9,6 +9,8 @@ import TinderCard from 'react-tinder-card'
 
 import TumderCard from './TumderCard'
 
+import { students } from './data'
+
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -39,7 +41,8 @@ export default function App() {
         <Typography variant="h4" component="h1" gutterBottom>
           TUMder
         </Typography>
-        <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}><TumderCard/></TinderCard>
+        {students.map(student => <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']} key={student.name}><TumderCard student={student}/></TinderCard>)}
+        
         <ProTip />
         <Copyright />
       </Box>
