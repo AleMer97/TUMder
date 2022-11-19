@@ -111,8 +111,13 @@ export const chats = [
     image: chatStudents[4].image,
   },
   {
-    name: "Hermann Fresh",
+    name: "Hans Pfeiffer",
     display: "Hey, do you have plans for 06.12?🤩",
+    image: chatStudents[2].image,
+  },
+  {
+    name: "Hermann Fresh",
+    display: "Allnighter at the MI bib today?",
     image: chatStudents[1].image,
   },
 ];
