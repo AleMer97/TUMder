@@ -8,8 +8,7 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import { Link } from "react-router-dom";
 
 
 const style = {
@@ -36,7 +35,6 @@ export default function MatchModal({student, setOpen, open}) {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        // sx={{height: 40}}
       >
         <Box sx={style} alignItems='center'>
           <Typography id="modal-modal-title" variant="h5" color="white" textAlign='center' mb={2}>
@@ -61,30 +59,18 @@ export default function MatchModal({student, setOpen, open}) {
           <Button 
             color="success" 
             variant="contained" 
-            onClick={() => null}
+            component={Link}
+            to="/chats"
           >
             Start Chatting 💬
           </Button>
           <Button 
             color="success" 
             variant="contained" 
-            onClick={() => null}
           >
             Open Group 👥
           </Button>
-         
-          </Grid>
-          {/* <Grid container justifyContent="space-around">
-            <IconButton 
-              size='large'
-              sx={{bgColor: "error"}}
-              color="error" 
-              onClick={() => handleClose()}
-            >
-              <HighlightOffIcon  fontSize='inherit'/>
-            </IconButton>
-          </Grid> */}
-          
+          </Grid>        
         </Box>
       </Modal>
     </div>

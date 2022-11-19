@@ -8,7 +8,7 @@ import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 import ForumIcon from '@mui/icons-material/Forum';
 import Avatar from '@mui/material/Avatar';
 
-function Navbar(selected) {
+function Navbar({ selected, user }) {
 
   const [value, setValue] = React.useState(0);
 
@@ -17,8 +17,10 @@ function Navbar(selected) {
     selected === 'chats' ? setValue(2) :
     setValue(1)
   }, [selected])
+  console.log(user)
 
   return (
+    
 
     <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={10}>
         <BottomNavigation
@@ -31,7 +33,7 @@ function Navbar(selected) {
           <BottomNavigationAction label="Profile" icon={
             <Avatar
                 alt="Profile Pic"
-                src="/static/tumStudent1.jpg"
+                src={user.image}
                 sx={{ width: 24, height: 24 }}
               />
             }  

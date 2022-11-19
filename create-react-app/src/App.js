@@ -15,8 +15,12 @@ import NoPage from './pages/NoPage';
 
 import TumderCards from './TumderCard';
 import Navbar from './Navbar';
+import { students } from './data';
 
 export default function App() {
+
+  const [user, setUser] = React.useState(students[4])
+
   return (
     <Router>
       <Container maxWidth="sm">
@@ -30,11 +34,11 @@ export default function App() {
                       renders the first one that matches the current URL. */}
                   <Routes>
                     <Route path="/chats" element={<Chats/>}/>
-                    <Route path="/profile" element={<Profile/>}/>
-                    <Route path="/" element={<Home />}/>
+                    <Route path="/profile" element={<Profile student={user}/>}/>
+                    <Route path="/" element={<Home user={user}/>}/>
                     <Route path="*" element={<NoPage />}/>
                   </Routes>
-                  <Navbar selected="TUMder"/>
+                  <Navbar selected="TUMder" user={user}/>
               </Grid>
           </Grid>
         </Box>
@@ -44,27 +48,8 @@ export default function App() {
   );
 }
 
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
-}
-
-function Copyright() {
+function Home({user}) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-function Home() {
-  
-  return (
-    <TumderCards/>         
+    <TumderCards filteredUser={user}/>         
   );
 }

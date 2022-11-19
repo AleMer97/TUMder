@@ -20,16 +20,18 @@ import ListItemText from '@mui/material/ListItemText';
 import SchoolIcon from '@mui/icons-material/School';
 import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
 
-import { students } from './data'
+import { students as rawStudents } from './data'
 import MatchModal from './MatchModal';
 
-export default function TumderCards () {
+export default function TumderCards ({filteredUser}) {
+
+  const students = rawStudents.filter((student) => student.name !== filteredUser.name)
+
   const [currentIndex, setCurrentIndex] = useState(students.length - 1)
   const [lastDirection, setLastDirection] = useState()
   // used for outOfFrame closure
   const currentIndexRef = useRef(currentIndex)
 
-  console.log(students)
   const childRefs = useMemo(
     () =>
       Array(students.length)
@@ -88,52 +90,52 @@ export default function TumderCards () {
     <Grid container direction='column' justifyContent='center'>
       <Grid item className='cardContainer'>
         {students.map((student, index) => (
-          <TinderCard
-            ref={childRefs[index]}
-            className='swipe'
-            key={student.name}
-            onSwipe={(dir) => { 
-              swiped(dir, student.name, index)
-              setCurrentStudent(student)
-            }}
-            onCardLeftScreen={() => outOfFrame(student.name, index)}
-            onCardRightScreen={() => outOfFrame(student.name, index)}
-            flickOnSwipe
-          >
-            <Card sx={{ maxWidth: 400, position: 'fixed'}}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="370"
-                  width='100%'
-                  image={student.image}
-                  alt="student"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div" sx={{color: '#0065bd'}}>
-                    {student.name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {student.description}
-                  </Typography>
-                  <List>
-                      <ListItem disablePadding>
-                        <ListItemIcon>
-                          <SchoolIcon sx={{color: '#0065bd'}} />
-                        </ListItemIcon>
-                        <ListItemText primary={student.degree} secondary={student.semester} />
-                      </ListItem>
-                      <ListItem disablePadding>
-                        <ListItemIcon>
-                          <EmojiFlagsIcon sx={{color: '#0065bd'}} />
-                        </ListItemIcon>
-                        <ListItemText primary={student.language} />
-                      </ListItem>
-                    </List>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </TinderCard>
+            <TinderCard
+              ref={childRefs[index]}
+              className='swipe'
+              key={student.name}
+              onSwipe={(dir) => { 
+                swiped(dir, student.name, index)
+                setCurrentStudent(student)
+              }}
+              onCardLeftScreen={() => outOfFrame(student.name, index)}
+              onCardRightScreen={() => outOfFrame(student.name, index)}
+              flickOnSwipe
+            >
+              <Card sx={{ maxWidth: 400, position: 'fixed'}}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    height="370"
+                    width='100%'
+                    image={student.image}
+                    alt="student"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div" sx={{color: '#0065bd'}}>
+                      {student.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {student.description}
+                    </Typography>
+                    <List>
+                        <ListItem disablePadding>
+                          <ListItemIcon>
+                            <SchoolIcon sx={{color: '#0065bd'}} />
+                          </ListItemIcon>
+                          <ListItemText primary={student.degree} secondary={student.semester} />
+                        </ListItem>
+                        <ListItem disablePadding>
+                          <ListItemIcon>
+                            <EmojiFlagsIcon sx={{color: '#0065bd'}} />
+                          </ListItemIcon>
+                          <ListItemText primary={student.language} />
+                        </ListItem>
+                      </List>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </TinderCard>
         ))}
        
       </Grid>
