@@ -15,6 +15,7 @@
     "@react-spring/web": "^9.5.5",
     "react": "latest",
     "react-dom": "latest",
+    "react-router-dom": "^6.4.3",
     "react-scripts": "latest",
     "react-tinder-card": "^1.6.2"
   },
