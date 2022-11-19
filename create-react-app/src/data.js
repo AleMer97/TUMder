@@ -16,7 +16,7 @@ const student2 = {
   name: "Hans Pfeiffer",
   age: 29,
   degree: "Business Administration",
-  semester: "12. Master",
+  semester: "1. Master",
   description:
     "Feuerzangenbowle and university for life! I'm also student of German philology at LMU.",
   language: "German, Bavarian",
@@ -30,7 +30,7 @@ const student3 = {
   name: "Mandana Jolie",
   age: 21,
   degree: "Biochemistry",
-  semester: "8. Master",
+  semester: "1. Master",
   description: "Motivated for studying:)",
   language: "German, English, Spanish",
   maxGroupSize: 4,
