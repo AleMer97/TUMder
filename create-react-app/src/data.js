@@ -60,4 +60,16 @@ const student5 = {
     image: '/static/tumStudent5.jpg'
 }
 
-export const students = [student1, student2, student3, student4, student5]
+const student6 = {
+    name: 'Alex Mercier',
+    age: 25,
+    degree: 'Computer Science',
+    semester: '3. Master',
+    description: "Sliding into your dms?😏",
+    language: 'German, French, English, Spanish',
+    maxGroupSize: 4,
+    searchesFor: 'study group',
+    image: '/static/tumStudent6.jpg'
+}
+
+export const students = [student1, student2, student3, student4, student5, student6]
