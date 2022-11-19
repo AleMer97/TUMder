@@ -1,13 +1,11 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import { Button, Grid, Switch } from '@mui/material';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import TextField from '@mui/material/TextField';
+import * as React from "react";
+import Avatar from "@mui/material/Avatar";
+import { Button, Grid, Switch } from "@mui/material";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import TextField from "@mui/material/TextField";
 
-export default function Profile({student}) {
-
-
+export default function Profile({ student }) {
   const [name, setName] = React.useState(student.name);
 
   const handleChangeName = (event) => {
@@ -31,9 +29,9 @@ export default function Profile({student}) {
   };
 
   return (
-    <Grid 
-      container 
-      direction="column" 
+    <Grid
+      container
+      direction="column"
       justifyContent="center"
       alignItems="center"
     >
@@ -41,62 +39,56 @@ export default function Profile({student}) {
         <Avatar
           alt="Profile Pic"
           src={student.image}
-          sx={{ width: 150, height: 150}}
+          sx={{ width: 150, height: 150 }}
         />
-      </Grid>
-      
-      <Grid item mb={3}>
-          <TextField
-            sx={{width: '300px'}}
-            id="outlined-multiline-flexible"
-            label="Name"
-            maxRows={1}
-            value={name}
-            size="small"
-            onChange={handleChangeName}
-          />
-      </Grid>
-
-      <Grid item mb={3} >
-          <TextField
-            sx={{width: '300px'}}
-            id="outlined-multiline-flexible"
-            label="Description"
-            multiline
-            maxRows={5}
-            minRows={3}
-            value={description}
-            onChange={handleChangeDescription}
-          />
       </Grid>
 
       <Grid item mb={3}>
         <TextField
-          sx={{width: '300px'}}
+          sx={{ width: "300px" }}
+          id="outlined-multiline-flexible"
+          label="Name"
+          maxRows={1}
+          value={name}
+          size="small"
+          onChange={handleChangeName}
+        />
+      </Grid>
+
+      <Grid item mb={3}>
+        <TextField
+          sx={{ width: "300px" }}
+          id="outlined-multiline-flexible"
+          label="Description"
+          multiline
+          maxRows={5}
+          minRows={3}
+          value={description}
+          onChange={handleChangeDescription}
+        />
+      </Grid>
+
+      <Grid item mb={3}>
+        <TextField
+          sx={{ width: "300px" }}
           size="small"
           label="Languages"
           value={student.language}
         />
       </Grid>
 
-      
-
-      <Grid 
-        container 
+      <Grid
+        container
         spacing={1}
-        sx={{width: '300px'}} 
-        justifyContent="center" 
+        sx={{ width: "300px" }}
+        justifyContent="center"
         ml={0}
-        mb={3} 
+        mb={3}
       >
-        <Grid 
-          container 
-          direction='row' 
-          justifyContent='space-between'
-        >
+        <Grid container direction="row" justifyContent="space-between">
           <Grid item mb={3}>
             <TextField
-              sx={{width: '160px'}}
+              sx={{ width: "160px" }}
               size="small"
               label="Degree"
               value={student.degree}
@@ -104,40 +96,34 @@ export default function Profile({student}) {
           </Grid>
           <Grid item mb={3}>
             <TextField
-              sx={{width: '125px'}}
+              sx={{ width: "125px" }}
               size="small"
               label="Semester"
               value={student.semester}
             />
           </Grid>
         </Grid>
-        <Grid 
-          container 
-          direction='row' 
-          justifyContent='space-between'
-        >
-          
-          <Grid item >
+        <Grid container direction="row" justifyContent="space-between">
+          <Grid item>
             <TextField
-              sx={{width: '120px', marginLeft: 3}}
+              sx={{ width: "120px", marginLeft: 3 }}
               size="small"
               label="Age"
               value={student.age}
             />
           </Grid>
-          <Grid item >
+          <Grid item>
             <TextField
-              sx={{width: '120px', marginRight: 3}}
+              sx={{ width: "120px", marginRight: 3 }}
               size="small"
               label="maxGroupSize"
               value={student.maxGroupSize}
             />
-          </Grid> 
-        </Grid>      
+          </Grid>
+        </Grid>
       </Grid>
 
-      
-      <Grid item mt={-2} alignItems='flex-start'>
+      <Grid item mt={-2} alignItems="flex-start">
         <FormGroup>
           <FormControlLabel
             value="start"
@@ -154,12 +140,12 @@ export default function Profile({student}) {
             labelPlacement="start"
             checked={checkedStudy}
             onChange={handleStudy}
-          />        
+          />
         </FormGroup>
       </Grid>
 
-      <Grid item >
-        <Button sx={{border: 2, borderRadius: 1}}>Edit</Button>
+      <Grid item>
+        <Button sx={{ border: 2, borderRadius: 1 }}>Edit</Button>
       </Grid>
     </Grid>
   );

@@ -18,7 +18,10 @@ export default function Chats() {
         {chats.map((chat) => (
           <ListItem divider key={chat.display}>
             <ListItemAvatar>
-              <Avatar src={chat.image} />
+              <Avatar
+                src={chat.image}
+                sx={{ width: 60, height: 60, marginRight: 3 }}
+              />
             </ListItemAvatar>
             <ListItemText primary={chat.name} secondary={chat.display} />
           </ListItem>
