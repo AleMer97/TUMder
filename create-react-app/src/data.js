@@ -19,7 +19,7 @@ const student2 = {
     degree: 'Business Administration',
     semester: '12. Master',
     description: "Feuerzangenbowle and university for life! I'm also student of German philology at LMU.",
-    language: 'Bavarian',
+    language: 'German, Bavarian',
     maxGroupSize: 4,
     searchesForMensa: false,
     searchesForStudy: true,
@@ -61,7 +61,7 @@ const student5 = {
     language: 'German, English',
     maxGroupSize: 4,
     searchesForMensa: true,
-    searchesForStudy: false,
+    searchesForStudy: true,
     image: '/static/tumStudent5.jpg'
 }
 
@@ -86,7 +86,7 @@ const group1 = {
     image: '/statics/tumGroup1.npg'
 }
 
-export const students = [student1, student2, student3, student4, student5, student6, group1]
+export const students = [group1, student1, student2, student3, student4, student5, student6]
 
 const chatStudents = [...students]
 
