@@ -21,7 +21,6 @@ import SchoolIcon from '@mui/icons-material/School';
 import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
 
 import { students } from './data'
-import theme from './theme';
 import MatchModal from './MatchModal';
 
 export default function TumderCards () {
@@ -57,17 +56,16 @@ export default function TumderCards () {
   const outOfFrame = (name, idx) => {
     console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current)
     // handle the case in which go back is pressed before card goes outOfFrame
-    currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
+    // currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
     // TODO: when quickly swipe and restore multiple times the same card,
     // it happens multiple outOfFrame events are queued and the card disappear
     // during latest swipes. Only the last outOfFrame event should be considered valid
   }
 
-  const swipe = async (dir, student) => {
+  const swipe = async (dir) => {
     if (canSwipe && currentIndex < students.length) {
       await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
     }
-    handleOpen()
   }
 
   // increase current index and show card
@@ -99,6 +97,8 @@ export default function TumderCards () {
               setCurrentStudent(student)
             }}
             onCardLeftScreen={() => outOfFrame(student.name, index)}
+            onCardRightScreen={() => outOfFrame(student.name, index)}
+            flickOnSwipe
           >
             <Card sx={{ maxWidth: 400, position: 'fixed'}}>
               <CardActionArea>
@@ -145,15 +145,28 @@ export default function TumderCards () {
 
       <Grid container className='buttons' justifyContent='space-between'>
         <Button 
-          color="success" 
+          color="error" 
           variant="outlined" 
           style={{ backgroundColor: !canSwipe && '#c3c4d3' }} 
           onClick={() => swipe('left')}
         >
           Swipe left
         </Button>
-        <IconButton  sx={{color: '#0065bd',  backgroundColor: !canGoBack && '#c3c4d3'}} variant="outlined" onClick={() => goBack()}><ReplayIcon fontSize="inherit" /></IconButton>
-        <Button  color="error" variant="outlined" style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Swipe right</Button>
+        <IconButton 
+           sx={{color: '#0065bd',  backgroundColor: !canGoBack && '#c3c4d3'}} 
+           variant="outlined" onClick={() => goBack()}
+           >
+            <ReplayIcon fontSize="inherit" />
+          </IconButton>
+        <Button  
+          color="success" 
+          variant="outlined" 
+          style={{ backgroundColor: !canSwipe && '#c3c4d3' }} 
+          onClick={() => {
+            swipe('left')
+            handleOpen()}}>
+            Swipe right
+        </Button>
       </Grid>
     </Grid>
     </>

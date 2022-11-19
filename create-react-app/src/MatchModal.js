@@ -31,10 +31,12 @@ export default function MatchModal({student, setOpen, open}) {
   return (
     <div>
       <Modal
+        disableEnforceFocus 
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        // sx={{height: 40}}
       >
         <Box sx={style} alignItems='center'>
           <Typography id="modal-modal-title" variant="h5" color="white" textAlign='center' mb={2}>
