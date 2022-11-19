@@ -10,10 +10,11 @@ import {
 } from "react-router-dom";
 
 import Profile from './pages/Profile';
-import Chats from './pages/Chats'
+import Chats from './pages/Chats';
+import NoPage from './pages/NoPage';
 
-import TumderCards from './TumderCard'
-import Navbar from './Navbar'
+import TumderCards from './TumderCard';
+import Navbar from './Navbar';
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
                     <Route path="/chats" element={<Chats/>}/>
                     <Route path="/profile" element={<Profile/>}/>
                     <Route path="/" element={<Home />}/>
+                    <Route path="*" element={<NoPage />}/>
                   </Routes>
                   <Navbar selected="TUMder"/>
               </Grid>
