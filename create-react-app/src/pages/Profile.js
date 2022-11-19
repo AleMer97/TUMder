@@ -40,10 +40,8 @@ export default function Profile() {
     <Grid 
       container 
       direction="column" 
-      // sx={{ my: 4 }}
       justifyContent="center"
       alignItems="center"
-      // spacing={3}
     >
       <Grid item mb={3}>
         <Avatar

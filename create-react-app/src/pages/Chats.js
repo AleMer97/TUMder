@@ -9,7 +9,6 @@ import ImageIcon from '@mui/icons-material/Image';
 import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import { Typography } from '@mui/material';
-import theme from '../theme';
 
 export default function Chats() {
   return (
