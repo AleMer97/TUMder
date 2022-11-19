@@ -13,6 +13,13 @@ import IconButton from '@mui/material/IconButton';
 import ReplayIcon from '@mui/icons-material/Replay';
 
 
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import SchoolIcon from '@mui/icons-material/School';
+import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
+
 import { students } from './data'
 import theme from './theme';
 
@@ -84,18 +91,32 @@ export default function TumderCards () {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="500"
+                  height="400"
                   width='100%'
                   image={student.image}
                   alt="student"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                  <Typography gutterBottom variant="h5" component="div" sx={{color: '#0065bd'}}>
                     {student.name}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {student.description}
                   </Typography>
+                  <List>
+                      <ListItem disablePadding>
+                        <ListItemIcon>
+                          <SchoolIcon sx={{color: '#0065bd'}} />
+                        </ListItemIcon>
+                        <ListItemText primary={student.degree} secondary={student.semester} />
+                      </ListItem>
+                      <ListItem disablePadding>
+                        <ListItemIcon>
+                          <EmojiFlagsIcon sx={{color: '#0065bd'}} />
+                        </ListItemIcon>
+                        <ListItemText primary={student.language} />
+                      </ListItem>
+                    </List>
                 </CardContent>
               </CardActionArea>
             </Card>
@@ -111,7 +132,7 @@ export default function TumderCards () {
 
       <Grid container className='buttons' justifyContent='space-between'>
         <Button color="success" variant="outlined" style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Swipe left</Button>
-        <IconButton  variant="outlined" style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}><ReplayIcon fontSize="inherit" /></IconButton>
+        <IconButton  sx={{color: '#0065bd',  backgroundColor: !canGoBack && '#c3c4d3'}} variant="outlined" onClick={() => goBack()}><ReplayIcon fontSize="inherit" /></IconButton>
         <Button  color="error" variant="outlined" style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Swipe right</Button>
       </Grid>
     </Grid>
