@@ -1,4 +1,6 @@
 # TUMder
+![image](https://user-images.githubusercontent.com/14299058/202893763-5a1e337e-7a15-431e-91b7-d6efee2c4aec.png)
+
 Connect people - back in person.
 
 ## Inspiration
