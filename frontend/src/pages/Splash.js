@@ -4,6 +4,7 @@ import { Button } from "@mui/material";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 export default function Splash() {
   return (
@@ -42,7 +43,8 @@ export default function Splash() {
         ...or meet new students!
       </Box>
       <Box justifyContent="center" alignItems="center" m={1} display="flex">
-        <Button variant="outlined" href="/match">
+        <Button variant="outlined" component={Link}
+          to="/match">
           Let's get started!
         </Button>
       </Box>
